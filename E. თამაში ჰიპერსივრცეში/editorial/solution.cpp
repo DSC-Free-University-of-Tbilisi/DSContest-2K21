@@ -9,18 +9,15 @@ typedef long double ld;
 const int MOD = 1e9 + 7;
 const int N = 1e6 + 7;
 
-ifstream inputFile;
-ofstream outputFile;
-
 string solve(){
     ll n, m , k;
-    inputFile>>n>>m>>k;
+    cin>>n>>m>>k;
     vector<ll> sizes(n), santa(n), rudolph(n);
     for(int i = 0 ; i < n ; i++){
-        inputFile>>santa[i];
+        cin>>santa[i];
     }
     for(int i = 0 ; i < n ; i++){
-        inputFile>>rudolph[i];
+        cin>>rudolph[i];
     }
     for(int i = 0 ; i < n ; i++){
         sizes[i] = abs(santa[i] - rudolph[i]) % (k + 1);
@@ -40,17 +37,6 @@ string solve(){
 }
  
 int main(){
-    // ios::sync_with_stdio(0);  cin.tie(0); cout.tie(0);
-    int t = 1;
-    for(int i = 1; i < 30; i++){
-        string name = "inputs/input" + to_string(i) + ".txt";
-        inputFile.open(name);        
-        name = "outputs/output" + to_string(i) + ".txt";
-        outputFile.open(name); 
-
-        string res = solve();
-        outputFile<<res<<endl;
-        inputFile.close();
-        outputFile.close();
-    }
+    ios::sync_with_stdio(0);  cin.tie(0); cout.tie(0);
+    cout<< solve() <<endl;
 }
