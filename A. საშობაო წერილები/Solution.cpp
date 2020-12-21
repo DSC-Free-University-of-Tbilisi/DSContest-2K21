@@ -1,17 +1,12 @@
 #include <iostream>
 using namespace std;
 
+int ansA, ansB;
+int arrA[26], arrB[26];
 
 int main(){
-    int arrA[26];
-    int arrB[26];
     string a, b;
-    int ansA, ansB;
-    ansA = 0;
-    ansB = 0;
- 
     cin >> a >> b;
-
     for(int i = 0; i < a.length(); i++){
         if(a[i] == '?'){
             ansA++;
